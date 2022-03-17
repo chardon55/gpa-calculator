@@ -1,3 +1,6 @@
-# GPA Calculator
+# GPA Calculation Collection
 
-A simple GPA calculator using the calculation method of Peking University
+| Method | Status |
+| :-- | :-- |
+| Peking University | OK |
+| Tohoku University | <b style="color: yellow;">Untested</b> |

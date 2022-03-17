@@ -2,5 +2,5 @@
 
 | Method | Status |
 | :-- | :-- |
-| Peking University | OK |
-| Tohoku University | <b style="color: yellow;">Untested</b> |
+| Peking University (2019 method) | OK |
+| Tohoku University (2016 method) | <b style="color: yellow;">Untested</b> |

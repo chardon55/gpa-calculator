@@ -1,6 +1,6 @@
 import pandas as pd
 
-from gpacalc.gpa import gpa_calc_pku
+from gpacalc.peking import PekingGPA
 
 
 def main():
@@ -8,7 +8,8 @@ def main():
 
     print(df)
 
-    gpa = gpa_calc_pku(df, "score", "weight")
+    p = PekingGPA()
+    gpa = p.calculate(df, "score", "weight")
 
     print(f"{gpa} / 4.0")
 

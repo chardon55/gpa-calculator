@@ -143,5 +143,5 @@ cython_debug/
 *.csv
 *.pdf
 
-/.idea/
-/.vscode/
+.idea/
+.vscode/

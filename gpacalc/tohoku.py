@@ -6,9 +6,9 @@ from . import gpabase as b
 
 class TohokuGPA(b.GPACalcModule):
     '''
-        GPA calculation method (Cumulative) of Tohoku University since April 1, 2016
+        GPA calculation method (Cumulative) of Tohoku University since March 3, 2020.
 
-        For details: https://www.tohoku.ac.jp/en/academics/cn_gpa.html
+        For details: https://www.tohoku.ac.jp/japanese/studentinfo/education/01/education0110/015_2.pdf (Japanese)
     '''
 
     def calculate(self, df: pd.DataFrame, score_col: str, grade_weight_col: str) -> np.float:

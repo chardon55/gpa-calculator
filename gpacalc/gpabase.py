@@ -6,5 +6,5 @@ import pandas as pd
 class GPACalcModule(object):
 
     @abstractmethod
-    def calculate(df: pd.DataFrame, score_col: str, grade_weight_col: str) -> np.float:
+    def calculate(self, df: pd.DataFrame, score_col: str, grade_weight_col: str) -> np.float:
         pass

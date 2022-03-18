@@ -19,6 +19,4 @@ class TohokuGPA(b.GPACalcModule):
         df1[score_col] = df1[score_col] // 10 - 5
         df1.replace(5, 4, inplace=True)
 
-        print(df1)
-
         return (df1[score_col] * df1[grade_weight_col]).sum() / df[grade_weight_col].sum()

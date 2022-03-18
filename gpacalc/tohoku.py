@@ -7,7 +7,6 @@ from . import gpabase as b
 class TohokuGPA(b.GPACalcModule):
     '''
         GPA calculation method (Cumulative) of Tohoku University since April 1, 2016
-        (UNTESTED)
 
         For details: https://www.tohoku.ac.jp/en/academics/cn_gpa.html
     '''

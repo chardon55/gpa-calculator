@@ -8,7 +8,7 @@ class PekingGPA(b.GPACalcModule):
     '''
         GPA calculation method of Peking University since September 1, 2019
 
-        For details: http://www.dean.pku.edu.cn/web/rules_info.php?id=12
+        For details: http://www.dean.pku.edu.cn/web/rules_info.php?id=12 (Chinese)
     '''
 
     def calculate(self, df: pd.DataFrame, score_col: str, grade_weight_col: str) -> np.float:

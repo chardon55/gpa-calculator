@@ -141,6 +141,7 @@ cython_debug/
 #data_process.py
 #main.py
 *.csv
+!sample.csv
 *.pdf
 
 .idea/

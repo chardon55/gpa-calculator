@@ -11,7 +11,7 @@ class PekingGPA(b.GPACalcModule):
         For details: http://www.dean.pku.edu.cn/web/rules_info.php?id=12 (Chinese)
     '''
 
-    def calculate(self, df: pd.DataFrame, score_col: str, grade_weight_col: str) -> np.float:
+    def calculate(self, df: pd.DataFrame, score_col, grade_weight_col) -> np.float:
         df1 = df.copy()
 
         df1.drop(index=df1[df1[score_col] < 60].index, inplace=True)

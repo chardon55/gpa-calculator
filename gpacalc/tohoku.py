@@ -11,13 +11,6 @@ class TohokuGPA(b.GPACalcModule):
         For details: https://www.tohoku.ac.jp/japanese/studentinfo/education/01/education0110/015_2.pdf (Japanese)
     '''
 
-    def calculate(self, df: pd.DataFrame, score_col, grade_weight_col) -> np.float:
-        df1 = df.copy()
-
-        sc = df1[score_col]
-
-        df1.drop(index=df1[sc < 60].index, inplace=True)
-        sc = sc // 10 - 5
-        sc.replace(5, 4, inplace=True)
-
-        return (sc * df1[grade_weight_col]).sum() / df[grade_weight_col].sum()
+    def _calc_score(self, score_col: pd.Series):
+        score_col.update(score_col // 10 - 5)
+        score_col.replace(5, 4, inplace=True)

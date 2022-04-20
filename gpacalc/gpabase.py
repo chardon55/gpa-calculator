@@ -19,5 +19,14 @@ class GPACalcModule(object):
         return self.__full_gpa
 
     @abstractmethod
-    def calculate(self, df: pd.DataFrame, score_col, grade_weight_col) -> np.float:
+    def _calc_score(self, score_col: pd.Series):
         pass
+
+    def calculate(self, df: pd.DataFrame, score_col, grade_weight_col) -> np.float:
+        df1 = df.copy()
+        sc = df1[score_col]
+
+        df1.drop(index=df1[sc < 60].index, inplace=True)
+        self._calc_score(sc)
+
+        return (sc * df1[grade_weight_col]).sum() / df[grade_weight_col].sum()

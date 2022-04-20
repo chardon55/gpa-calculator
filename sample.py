@@ -1,19 +1,22 @@
 import pandas as pd
 
 # from gpacalc.peking import PekingGPA
-from gpacalc.tohoku import TohokuGPA
+# from gpacalc.tohoku import TohokuGPA
+from gpacalc.kyoto import KyotoGPA
 
 
 def main():
     df = pd.read_csv('./sample.csv')
-    # df = pd.read_csv('./score.csv')
 
     print(df)
 
-    p = TohokuGPA()
+    # p = TohokuGPA()
+    # p = PekingGPA()
+    p = KyotoGPA()
+
     gpa = p.calculate(df, "score", "weight")
 
-    print(f"{gpa} / 4.0")
+    print(f"{gpa} / {p.full_gpa}")
 
 
 if __name__ == '__main__':

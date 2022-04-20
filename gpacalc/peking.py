@@ -14,7 +14,9 @@ class PekingGPA(b.GPACalcModule):
     def calculate(self, df: pd.DataFrame, score_col, grade_weight_col) -> np.float:
         df1 = df.copy()
 
-        df1.drop(index=df1[df1[score_col] < 60].index, inplace=True)
-        df1[score_col] = 4 - 3 * (100 - df1[score_col]) ** 2 / 1600
+        sc = df1[score_col]
 
-        return (df1[score_col] * df1[grade_weight_col]).sum() / df[grade_weight_col].sum()
+        df1.drop(index=df1[sc < 60].index, inplace=True)
+        sc = 4 - 3 * (100 - sc) ** 2 / 1600
+
+        return (sc * df1[grade_weight_col]).sum() / df[grade_weight_col].sum()
